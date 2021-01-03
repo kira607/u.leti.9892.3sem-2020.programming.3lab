@@ -14,9 +14,7 @@ struct TruckList
 
     [[nodiscard]] Truck *Get(int index) const;
     Truck *Add(const Truck &truck);
-    void Delete(int index);
     void Free();
-
     void _check_index(const int &index) const;
 };
 

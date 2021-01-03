@@ -32,42 +32,6 @@ void TruckDataBase::Print(int index, bool print_header) const
               << std::setw(5)  << p->transportation_distance << "\n";
 }
 
-void TruckDataBase::Edit(int index)
-{
-    list._check_index(index);
-    Truck *target_element = list.Get(index);
-    while(true)
-    {
-        std::cout << "------------------------\n";
-        Print(index);
-        std::cout << "------------------------\n";
-        std::cout << "Choose filed:\n";
-        std::cout << "1 brand" << "\n";
-        std::cout << "2 capacity" << "\n";
-        std::cout << "3 distance" << "\n";
-        std::cout << "0 Finish edit" << "\n";
-
-        int option;
-        Input(option, "CMD: ");
-
-        switch (option)
-        {
-            case 1:
-                Input(target_element->brand, "New value: ");
-                break;
-            case 2:
-                Input(target_element->capacity, "New value: ");
-                break;
-            case 3:
-                Input(target_element->transportation_distance, "New value: ");
-                break;
-            case 0:
-                return;
-            default: std::cout << "\nIncorrect input\n\n";
-        }
-    }
-}
-
 void TruckDataBase::Add()
 {
     Truck new_element;
@@ -76,15 +40,6 @@ void TruckDataBase::Add()
     Input(new_element.capacity, "capacity: ");
     Input(new_element.transportation_distance, "transportation distance: ");
     list.Add(new_element);
-}
-
-void TruckDataBase::Delete(int index)
-{
-    list.Delete(index);
-    for(int i = index; i < list.size; ++i)
-    {
-        list.Get(i)->id = i;
-    }
 }
 
 void TruckDataBase::Exit()

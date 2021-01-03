@@ -1,131 +1,37 @@
-\documentclass[12pt,a4paper]{article}  % шаблон для статьи, шрифт 12 пт
-\usepackage[utf8x]{inputenc}  % использование кодировки Юникод UTF-8
-\usepackage[russian]{babel}  % пакет поддержки русского языка
-\usepackage{lipsum}  % Рыба-текст
-\usepackage[compact]{titlesec}  % для titlespacing
-\titlespacing*{\section}{0.75cm}{1em}{0.1em}  % отступ заголовка 
-% \titlespacing{\заголовок}{слева}{перед}{после}[справа]
-\titlespacing*{\subsection}{0.75cm}{1em}{0.1em}
-\usepackage{indentfirst}  % отступ первого абзаца
-\setlength{\parindent}{0.75cm}
-\usepackage[labelsep=endash]{caption}  % тире вместо двоеточия в картинках
-\usepackage{graphicx}  % кртинки
-\usepackage{comment}  % комментарии
-\usepackage{tabularx}  % таблицы
-\usepackage{color}  % цветной код
-\usepackage{listings}  % листинги кода из файлов
-\usepackage{cite}  % ???
-\lstset{ %
-	language=C++,                   % выбор языка для подсветки (здесь это С++)
-	basicstyle=\small,              % размер и начертание шрифта для подсветки кода
-	numbers=left,                   % где поставить нумерацию строк (слева\справа)
-	numberstyle=\tiny,              % размер шрифта для номеров строк
-	stepnumber=1,                   % размер шага между двумя номерами строк
-	numbersep=5pt,                  % как далеко отстоят номера строк от подсвечиваемого кода
-	backgroundcolor=\color{white},  % цвет фона подсветки - используем \usepackage{color}
-	showspaces=false,               % показывать или нет пробелы специальными отступами
-	showstringspaces=false,         % показывать или нет пробелы в строках
-	showtabs=false,                 % показывать или нет табуляцию в строках
-	frame=false,                    % рисовать рамку вокруг кода
-	tabsize=2,                      % размер табуляции по умолчанию равен 2 пробелам
-	captionpos=t,                   % позиция заголовка вверху [t] или внизу [b] 
-	breaklines=true,                % автоматически переносить строки (да\нет)
-	breakatwhitespace=false,        % переносить строки только если есть пробел
-	escapeinside={\%*}{*)}          % если нужно добавить комментарии в коде
-}
+\newcommand{\department}{САПР}
+\newcommand{\labnum}{3}
+\newcommand{\discipline}{Программирование}
+\newcommand{\theme}
+{Списки. Функции, выполняющие создание, сохранение и восстановление списка}
+\newcommand{\haspartner}{1}
+\newcommand{\partnername}{Миллер В.В.}
+\newcommand{\teachername}{Кузьмин С.А.}
+\newcommand{\labyear}{2020}
 
-%перенос строк внутри таблиц
-\newcommand{\specialcell}[2][c]{%
-	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-
-% нумерация рисунков по номеру главы (e.g. 1.1) для отчёта по курсовой
-% \renewcommand\thefigure{\arabic{section}.\arabic{figure}}
-
-% Шаблон создания картинки
-% \begin{figure}[hpt!]
-% 	\centering
-% 	\includegraphics[width=0.6\linewidth]{photo/photo1}
-% 	\caption{Подпись к рисунку}
-% 	\label{имя ссылки на рисунок}
-% \end{figure}
+\input{modules/inputs.tex}
 
 \begin{document}
-	
-	\thispagestyle{empty}
-	
-	\begin{center}
-		\Large{
-			\textbf{МИНОБРНАУКИ РОССИИ}
-			
-			\textbf{Санкт-Петербургский государственный}
-			
-			\textbf{электротехнический университет «ЛЭТИ»}
-			
-			\textbf{им. В.И. Ульянова (Ленина)}
-			
-			\textbf{Кафедра САПР}
-		}
-	\end{center}
-	
-	\topskip=0pt
-	\vspace*{\fill}
-	\begin{center}
-		\Large{
-			\textbf{
-				ЛАБОРАТОРНАЯ РАБОТА №N\\
-				по дисциплине «Программирование»\\
-				Тема: Тема\\
-			}
-		}
-	\end{center}
-	\vspace*{\fill}
-	
-	\begin{tabular}{lcr}
-		Студенты гр. 9892 & \begin{tabular}{p{60mm}} \\ \hline \end{tabular} & Лескин К.А.  \\\\
-		                 & \begin{tabular}{p{60mm}} \\ \hline \end{tabular} & Миллер В.В. 
-		\\\\
-		Преподаватель    & \begin{tabular}{p{60mm}} \\ \hline \end{tabular} & Кузьмин С.А. 
-		\\\\
-	\end{tabular} 
-	
-	\begin{center}
-		Санкт-Петербург\\
-		2020
-	\end{center}
-	%////////////////////////////////////////////////////////////////////////////////////////////////
-	%////////////////////////////////////////////////////////////////////////////////////////////////
-	%////////////////////////////////////////////////////////////////////////////////////////////////
-	\newpage
-	
-	\section*{Цель работы}
-	
-	Цель
-	
-	\section*{Формулировка задания}
-	
-	Задание из методички
-	
-	\section*{Описание структур данных}
-	
-	Описание испльзуеиых структур. Должна быть иллюстрация.
-
-	
-	\section*{Алгоритм программы}
-	
-	Алгоритм работы программы на псевдокоде
-	
-	
-	\section*{Тестирование программы}
-	
-	Тесты с описанием действий. Обязательно картинки с результатами
-
-	\section*{Выводы}
-	
-	Вывод
-	
-	\newpage
-	\section*{Приложение А. Листинг программного кода}
-	
-	Исходный код
-	% \lstinputlisting{src/source.cpp}
+    
+    \input{modules/title_page.tex}
+    
+    \input{modules/chapters/goal.tex}
+    
+    \input{modules/chapters/task_defenition.tex}
+    
+    \newpage
+    
+    \input{modules/chapters/files_formats.tex}
+    
+    \input{modules/chapters/data_structures_description.tex}
+    
+    \input{modules/chapters/functions_description.tex}
+    
+    \input{modules/chapters/programm_algorithm.tex}
+    
+    \input{modules/chapters/tests.tex}
+    
+    \input{modules/chapters/conclusion.tex}
+    
+    \input{modules/chapters/listing.tex}
+    
 \end{document}

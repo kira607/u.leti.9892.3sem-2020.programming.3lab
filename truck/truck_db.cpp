@@ -106,11 +106,6 @@ void TruckDataBase::Load(const std::string& db_path)
 
 void TruckDataBase::Save(const std::string& db_path) const
 {
-    if(std::filesystem::exists(db_path))
-    {
-        std::cout << "File '" << db_path << "' exists already\n";
-        return;
-    }
     std::ofstream fout(db_path, std::ios_base::trunc);
     fout << "id,brand,capacity,transportation_distance\n";
 

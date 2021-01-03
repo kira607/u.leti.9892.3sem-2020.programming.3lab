@@ -4,6 +4,13 @@
 #include "truck/lib_truck.h"
 #include "cmd.h"
 
+bool YN(const std::string &message = "")
+{
+    std::string choice;
+    Input(choice, message + " (y/n): ");
+    return choice == "y";
+}
+
 void RunCommand(TruckDataBase &db, CMD &cmd)
 {
     switch(cmd.command)
@@ -13,6 +20,12 @@ void RunCommand(TruckDataBase &db, CMD &cmd)
             break;
         case Command::Load:
             {
+                if(db.list.size > 0)
+                {
+                    if(!YN("Loading file will rewrite current list. Continue loading?"))
+                        break;
+                }
+                db.Exit();
                 try
                 {
                     std::string file;
@@ -40,9 +53,7 @@ void RunCommand(TruckDataBase &db, CMD &cmd)
                     break;
                 }
                 std::cout << "File '" << file << "' exists already\n";
-                std::string choice;
-                Input(choice, "Rewrite it? (y/n): ");
-                if(choice != "y")
+                if(!YN("Rewrite it?"))
                 {
                     std::cout << "Saving aborted\n";
                     break;
@@ -114,5 +125,7 @@ int main()
         command = cmd.command;
         RunCommand(db, cmd);
     }
+
+    db.Exit();
     return 0;
 }

@@ -1,15 +1,13 @@
-//
-// Created by Kirill on 02.01.2021.
-//
-
 #ifndef LAB3_CMD_H
 #define LAB3_CMD_H
 
 #include <iostream>
 #include <sstream>
 #include <cstring>
+#include <filesystem>
 
 #include "input.h"
+#include "truck/lib_truck.h"
 
 enum Command
 {
@@ -31,6 +29,8 @@ struct CMD
 
     CMD *Get();
     Command Parse();
+    static bool YN(const std::string &message);
+    void Run(TruckDataBase &db);
 };
 
 #endif //LAB3_CMD_H

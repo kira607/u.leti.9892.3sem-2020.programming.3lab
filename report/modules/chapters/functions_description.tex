@@ -15,7 +15,11 @@
 
 \underline{Назначение:} Конструктор для инициализации объекта структуры
 
-\underline{Параметры:} \verb|const Truck &truck|
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|const Truck &truck| -- ссылка на структуру, из которой нужно скопировать поля.
+\end{itemize}
 
 \underline{Возвращаемое значение:} \verb|Truck|
 
@@ -26,7 +30,11 @@
 
 \underline{Назначение:} Получение элемента списка
 
-\underline{Параметры:} \verb|int index|
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|int index| -- индекс получаемого элемента.
+\end{itemize}
 
 \underline{Возвращаемое значение:} \verb|Truck *|
 
@@ -35,11 +43,15 @@
 
 \underline{Назначение:} Добавление элемента в список
 
-\underline{Параметры:} \verb|const Truck &truck|
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|const Truck &truck| -- ссылка на добавляемый элемент.
+\end{itemize}
 
 \underline{Возвращаемое значение:} \verb|Truck *|
 
-
+\begin{comment}
 \subsubsection*{Delete}
 
 \underline{Назначение:} Удаление элемента из списка
@@ -47,6 +59,7 @@
 \underline{Параметры:} \verb|int index|
 
 \underline{Возвращаемое значение:} \verb|void|
+\end{comment}
 
 
 \subsubsection*{Free}
@@ -62,27 +75,21 @@
 
 \underline{Назначение:} Проверка полученного индекса
 
-\underline{Параметры:} \verb|const int &index|
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|int index| -- индекс проверяемого элемента.
+\end{itemize}
 
 \underline{Возвращаемое значение:} \verb|void|
 
 
 \subsection*{Модуль truck\_db.h}
 
-\subsubsection*{TruckDataBase}
-
-\underline{Назначение:} Конструктор для инициализации объекта структуры
-
-\underline{Параметры:} \verb|ScheduleDataBase *schedule_p,|
-
-\verb|const std::string &db_path_ = "../dbs/truckdb.csv")|
-
-\underline{Возвращаемое значение:} \verb|TruckDataBase|
-
 
 \subsubsection*{PrintAll}
 
-\underline{Назначение:} Вывод базы данных на экран
+\underline{Назначение:} Вывод списка на экран
 
 \underline{Параметры:} \verb|-|
 
@@ -91,22 +98,17 @@
 
 \subsubsection*{Print}
 
-\underline{Назначение:} Вывод элемента базы данных на экран
+\underline{Назначение:} Вывод элемента списка на экран
 
-\underline{Параметры:} \verb|int index|
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|int index| -- индекс выводимого элемента.
+\end{itemize}
 
 \underline{Возвращаемое значение:} \verb|void|
 
-
-\subsubsection*{Find}
-
-\underline{Назначение:} Поиск элемента по запросу
-
-\underline{Параметры:} \verb|Request *request|
-
-\underline{Возвращаемое значение:} \verb|Truck *|
-
-
+\begin{comment}
 \subsubsection*{Edit}
 
 \underline{Назначение:} Редактирование элемента базы данных
@@ -114,48 +116,105 @@
 \underline{Параметры:} \verb|int index|
 
 \underline{Возвращаемое значение:} \verb|void|
+\end{comment}
 
 
 \subsubsection*{Add}
 
-\underline{Назначение:} Добавление элемента в базу данных
+\underline{Назначение:} Добавление элемента в список
 
 \underline{Параметры:} \verb|-|
 
 \underline{Возвращаемое значение:} \verb|void|
 
-
+\begin{comment}
 \subsubsection*{Delete}
 
-\underline{Назначение:} Удаление элемента из базы данных
+\underline{Назначение:} Удаление элемента из списка
 
 \underline{Параметры:} \verb|int index|
 
 \underline{Возвращаемое значение:} \verb|void|
+\end{comment}
 
 
 \subsubsection*{Exit}
 
-\underline{Назначение:} Закрытие базы данных
+\underline{Назначение:} Очистка списка
 
 \underline{Параметры:} \verb|-|
 
 \underline{Возвращаемое значение:} \verb|void|
 
 
-\subsubsection*{\_loadDataBase}
+\subsubsection*{Load}
 
-\underline{Назначение:} Загрузка базы данных
+\underline{Назначение:} Загрузка списка из файла
 
-\underline{Параметры:} \verb|-|
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|const std::string& db_path| -- путь к файлу
+\end{itemize}
+
+\underline{Возвращаемое значение:} \verb|void|
+
+
+\subsubsection*{Save}
+
+\underline{Назначение:} Сохранение списка в файле
+
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|const std::string& db_path| -- путь к файлу
+\end{itemize}
 
 \underline{Возвращаемое значение:} \verb|void|
 
 
-\subsubsection*{\_updateDbFile}
+\subsection*{Модуль cmd.h}
 
-\underline{Назначение:} Обновление файла базы данных
+
+\subsubsection*{Get}
+
+\underline{Назначение:} Получение ввода комманды
 
 \underline{Параметры:} \verb|-|
 
-\underline{Возвращаемое значение:} \verb|void|
+\underline{Возвращаемое значение:} \verb|Command|
+
+
+\subsubsection*{Parse}
+
+\underline{Назначение:} Определение команды из ввода
+
+\underline{Параметры:} \verb|-|
+
+\underline{Возвращаемое значение:} \verb|Command|
+
+
+\subsubsection*{YN}
+
+\underline{Назначение:} Получение подтверждения пользователя (да/нет)
+
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|const std::string &message| -- сообщение
+\end{itemize}
+
+\underline{Возвращаемое значение:} \verb|bool|
+
+
+\subsubsection*{Run}
+
+\underline{Назначение:} Выполнение введённой команды
+
+\underline{Параметры:} 
+
+\begin{itemize}
+    \item \verb|TruckDataBase &db| -- ссылка на интерфейс управления списком
+\end{itemize}
+
+\underline{Возвращаемое значение:} \verb|void| 

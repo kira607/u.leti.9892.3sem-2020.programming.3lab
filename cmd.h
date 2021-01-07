@@ -7,7 +7,7 @@
 #include <filesystem>
 
 #include "input.h"
-#include "truck/lib_truck.h"
+#include "truck_db.h"
 
 enum Command
 {
@@ -22,15 +22,24 @@ enum Command
     NONE,
 };
 
-struct CMD
+struct Cmd
 {
     Command command = Command::NONE;
     std::string command_str{};
+    const std::string prompt = "LR3$>";
+    TruckDataBase *tp;
 
-    CMD *Get();
+    Command Get();
     Command Parse();
     static bool YN(const std::string &message);
     void Run(TruckDataBase &db);
+
+    void Add() const;
+    void Load() const;
+    void Save() const;
+    void Print() const;
+    void PrintAll() const;
+    static void Help();
 };
 
 #endif //LAB3_CMD_H

@@ -8,7 +8,7 @@
 
 #include "fast-cpp-csv-parser/csv.h"
 #include "truck_list.h"
-#include "../input.h"
+#include "input.h"
 
 struct TruckDataBase
 {

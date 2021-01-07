@@ -1,21 +1,16 @@
-#include <iostream>
-
 #include "cmd.h"
 
 int main()
 {
     TruckDataBase db{};
-    const std::string prompt = "LR3$>";
-    Command command = Command::NONE;
-    CMD cmd;
+    Command command;
+    Cmd cmd;
 
-    while(command != Command::Exit)
+    do
     {
-        std::cout << prompt;
-        cmd.Get();
-        command = cmd.command;
+        command = cmd.Get();
         cmd.Run(db);
-    }
+    } while(command != Command::Exit);
 
     db.Exit();
     return 0;

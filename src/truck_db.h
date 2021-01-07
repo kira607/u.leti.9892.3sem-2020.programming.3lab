@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <fstream>
 
-#include "fast-cpp-csv-parser/csv.h"
+#include "../fast-cpp-csv-parser/csv.h"
 #include "truck_list.h"
 #include "input.h"
 

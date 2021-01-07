@@ -9,7 +9,6 @@ struct Truck
     float capacity;
     int transportation_distance;
     std::string brand;
-
     Truck *prev;
     Truck *next;
 

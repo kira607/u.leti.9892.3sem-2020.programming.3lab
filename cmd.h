@@ -34,6 +34,7 @@ struct Cmd
     static bool YN(const std::string &message);
     void Run(TruckDataBase &db);
 
+    //!Commands
     void Add() const;
     void Load() const;
     void Save() const;

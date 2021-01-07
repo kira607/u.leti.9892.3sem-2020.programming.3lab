@@ -83,7 +83,7 @@ void Cmd::Load() const
     }
     catch (const std::exception &e)
     {
-        std::cout << "Error loading: " << e.what() << ". Loading aborted.\n";
+        std::cout << "Error loading: " << e.what() << " Loading aborted.\n";
     }
 }
 

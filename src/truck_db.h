@@ -1,5 +1,5 @@
-#ifndef COURSEWORK_TRUCK_DB_H
-#define COURSEWORK_TRUCK_DB_H
+#ifndef LAB3_TRUCK_DB_H
+#define LAB3_TRUCK_DB_H
 
 #define CSV_IO_NO_THREAD
 
@@ -23,4 +23,4 @@ struct TruckDataBase
     void Save(const std::string& db_path) const;
 };
 
-#endif //COURSEWORK_TRUCK_DB_H
+#endif //LAB3_TRUCK_DB_H

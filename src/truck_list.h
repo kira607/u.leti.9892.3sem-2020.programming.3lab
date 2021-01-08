@@ -1,5 +1,5 @@
-#ifndef COURSEWORK_TRUCK_LIST_H
-#define COURSEWORK_TRUCK_LIST_H
+#ifndef LAB3_TRUCK_LIST_H
+#define LAB3_TRUCK_LIST_H
 
 #include <iostream>
 #include <sstream>
@@ -18,4 +18,4 @@ struct TruckList
     void _check_index(const int &index) const;
 };
 
-#endif //COURSEWORK_TRUCK_LIST_H
+#endif //LAB3_TRUCK_LIST_H

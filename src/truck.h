@@ -1,5 +1,5 @@
-#ifndef COURSEWORK_TRUCK_H
-#define COURSEWORK_TRUCK_H
+#ifndef LAB3_TRUCK_H
+#define LAB3_TRUCK_H
 
 #include <string>
 
@@ -16,4 +16,4 @@ struct Truck
     Truck(const Truck &truck);
 };
 
-#endif //COURSEWORK_TRUCK_H
+#endif //LAB3_TRUCK_H

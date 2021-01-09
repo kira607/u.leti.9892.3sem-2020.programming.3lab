@@ -67,7 +67,7 @@ Truck *Add(const Truck &truck);
 
 \begin{itemize}
 	\item \verb|auto *new_node = new Truck(truck);|
-	\item Если \verb|if (size == 0)|
+	\item Если \verb|size == 0|
 	\begin{itemize}
 		\item \verb|head = new_node;|
 		\item \verb|tail = new_node;|
@@ -113,7 +113,7 @@ void _check_index(const int &index) const;
 \end{lstlisting}
 
 \begin{itemize}
-	\item Если \verb|index < 0 |||\verb| index >= size)|
+	\item Если \verb|index < 0 |||\verb| index >= size|
 	\begin{itemize}
 		\item \verb|std::stringstream message;|
 		\item \verb|message << "Index out of range (possible [0-" << size-1 << "], given " << index << ")";|
@@ -205,8 +205,10 @@ void Add();
 \begin{itemize}
 	\item \verb|Truck truck{};|
 	\item \verb|io::CSVReader<4> in(db_path);|
-	\item \verb|in.read_header(io::ignore_extra_column, "id", "brand", "capacity", "transportation_distance");|
-	\item Пока \verb|in.read_row(truck.id, truck.brand, truck.capacity, truck.transportation_distance)|
+	\item \verb|in.read_header(io::ignore_extra_column, "id",|\\
+	\verb|"brand", "capacity", "transportation_distance");|
+	\item Пока \verb|in.read_row(truck.id, truck.brand,|\\ 
+	\verb|truck.capacity, truck.transportation_distance)|
 	\begin{itemize}
 		\item \verb|list.Add(truck);|
 	\end{itemize}
@@ -321,42 +323,42 @@ void Add();
 	\item \verb|tp = &db;|
 	\item Смотрим на \verb|command|
 		\begin{itemize}
-			\item Если \verb|case Command::Add:|
+			\item Если \verb|Command::Add:|
 				\begin{itemize}
 					\item \verb|Add();|
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::Load:|
+			\item Если \verb|Command::Load:|
 				\begin{itemize}
 					\item \verb|Load();|
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::Save:|
+			\item Если \verb|Command::Save:|
 				\begin{itemize}
 					\item \verb|Save();|
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::Print:|
+			\item Если \verb|Command::Print:|
 				\begin{itemize}
 					\item \verb|Print();|
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::PrintAll:|
+			\item Если \verb|Command::PrintAll:|
 				\begin{itemize}
 					\item \verb|PrintAll();|
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::Help:|
+			\item Если \verb|Command::Help:|
 				\begin{itemize}
 					\item \verb|Help();|
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::Exit:|
-			\item Если \verb|case Command::Skip:|
+			\item Если \verb|Command::Exit:|
+			\item Если \verb|Command::Skip:|
 				\begin{itemize}
 					\item \verb|break;|
 				\end{itemize}
-			\item Если \verb|case Command::NONE:|
+			\item Если \verb|Command::NONE:|
 				\begin{itemize}
 					\item \verb|std::cout << "Unknown command '" << |
 					\verb|command_str << "'. Try 'help'.\n";|

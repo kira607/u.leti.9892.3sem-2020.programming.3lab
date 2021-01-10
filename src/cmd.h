@@ -26,7 +26,7 @@ struct Cmd
 {
     Command command = Command::NONE;
     std::string command_str{};
-    const std::string prompt = "LR3$>";
+    const std::string prompt = "LR $>";
     TruckDataBase *tp;
 
     Command Get();

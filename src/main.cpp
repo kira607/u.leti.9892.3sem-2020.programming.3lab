@@ -12,6 +12,6 @@ int main()
         cmd.Run(db);
     } while(command != Command::Exit);
 
-    db.Exit();
+    db.Clear();
     return 0;
 }

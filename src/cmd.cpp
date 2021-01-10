@@ -74,7 +74,7 @@ void Cmd::Load() const
         if(!YN("Loading file will rewrite current list. Continue loading?"))
             return;
     }
-    tp->Exit();
+    tp->Clear();
     try
     {
         std::string file;

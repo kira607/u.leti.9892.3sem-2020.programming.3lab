@@ -18,7 +18,7 @@ struct TruckDataBase
     void PrintAll() const;
     void Print(int index, bool print_header = false) const;
     void Add();
-    void Exit();
+    void Clear();
     void Load(const std::string& db_path);
     void Save(const std::string& db_path) const;
 };

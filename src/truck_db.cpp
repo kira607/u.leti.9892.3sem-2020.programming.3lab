@@ -42,7 +42,7 @@ void TruckDataBase::Add()
     list.Add(new_element);
 }
 
-void TruckDataBase::Exit()
+void TruckDataBase::Clear()
 {
     list.Free();
 }
